@@ -39,8 +39,8 @@ jobs:
     name: Publish a package to a GHES instance with subdomain isolation enabled
     env:
       TOKEN: ${{ secrets.GHES_PAT }}
-      GHES_HOSTNAME: ${{ env.GHES_INSTANCE }}
-      REPOSITORY_URL: "https://${{ env.GHES_INSTANCE }}/${{ env.NAMESPACE }}/test-packages"
+      GHES_HOSTNAME: ${{ vars.GHES_INSTANCE }}
+      REPOSITORY_URL: "https://${{ vars.GHES_INSTANCE }}/${{ env.NAMESPACE }}/test-packages"
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
@@ -56,8 +56,8 @@ jobs:
     name: Publish a package to a GHES instance with subdomain isolation disabled
     env:
       TOKEN: ${{ secrets.GHES_PAT_NO_SUBDOMAIN }}
-      GHES_HOSTNAME: ${{ env.GHES_INSTANCE__NO_SUBDOMAIN }}
-      REPOSITORY_URL: "https://${{ env.GHES_INSTANCE_NO_SUBDOMAIN }}/${{ env.NAMESPACE }}/test-packages"
+      GHES_HOSTNAME: ${{ vars.GHES_INSTANCE__NO_SUBDOMAIN }}
+      REPOSITORY_URL: "https://${{ vars.GHES_INSTANCE_NO_SUBDOMAIN }}/${{ env.NAMESPACE }}/test-packages"
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
