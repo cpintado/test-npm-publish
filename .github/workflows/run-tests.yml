@@ -51,7 +51,7 @@ jobs:
         -e PACKAGE_VERSION \
         -e REPOSITORY_URL \
         ghcr.io/${{ github.repository }}:$IMAGE_RELEASE
-  test-publish-ghes-subdomain:
+  test-publish-ghes-subdomain-disabled:
     runs-on: ubuntu-latest
     name: Publish a package to a GHES instance with subdomain isolation disabled
     env:
