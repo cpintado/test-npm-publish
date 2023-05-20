@@ -40,7 +40,7 @@ jobs:
     env:
       TOKEN: ${{ secrets.GHES_PAT }}
       GHES_HOSTNAME: ${{ vars.GHES_INSTANCE }}
-      REPOSITORY_URL: "https://${{ vars.GHES_INSTANCE }}/${{ env.NAMESPACE }}/test-packages"
+      REPOSITORY_URL: "https://${{ vars.GHES_INSTANCE }}/cpintado-org/test-packages"
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
@@ -57,7 +57,7 @@ jobs:
     env:
       TOKEN: ${{ secrets.GHES_PAT_NO_SUBDOMAIN }}
       GHES_HOSTNAME: ${{ vars.GHES_INSTANCE__NO_SUBDOMAIN }}
-      REPOSITORY_URL: "https://${{ vars.GHES_INSTANCE_NO_SUBDOMAIN }}/${{ env.NAMESPACE }}/test-packages"
+      REPOSITORY_URL: "https://${{ vars.GHES_INSTANCE_NO_SUBDOMAIN }}/cpintado-org/test-packages"
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
