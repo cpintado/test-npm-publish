@@ -54,11 +54,6 @@ if [[ ! "$MODE" =~ ^(publish|download)$ ]]; then
     exit 1
 fi
 
-if [[ ! $USER =~ ^[a-z0-9-]+$ ]]; then
-    echo "Invalid value for USER or USER not specified"
-    exit 1
-fi
-
 if [[ ! $TOKEN =~ ^[a-zA-Z0-9_-]+$ ]]; then
     echo "Invalid value for TOKEN or TOKEN not specified"
     exit 1
