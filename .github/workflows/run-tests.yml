@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Publish a package to github.com
     env:
-      TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      TOKEN: ${{ secrets.GHEC_PAT }}
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
