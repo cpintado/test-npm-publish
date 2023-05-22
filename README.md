@@ -1,4 +1,4 @@
-# test-nuget-publish
+# test-npm-publish
 
 [![Run tests](https://github.com/cpintado/test-npm-publish/actions/workflows/run-tests.yml/badge.svg)](https://github.com/cpintado/test-npm-publish/actions/workflows/run-tests.yml)
 
