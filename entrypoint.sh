@@ -9,7 +9,7 @@ function configure_authentication() {
 	    URL="npm.${GHES_HOSTNAME}/"
 	fi
     else
-	URL="nuget.pkg.github.com/"
+	URL="npm.pkg.github.com/"
     fi	
     		
     npm config set "@${NAMESPACE}:registry" "https://${URL}"
