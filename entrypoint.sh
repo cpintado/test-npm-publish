@@ -24,11 +24,11 @@ function publish_npm_package() {
     # set name, version and repository URL if necessary
     if [ -n "$REPOSITORY_URL" ]; then
 	npm pkg set name="@${NAMESPACE}/${PACKAGE_ID}"
-	npm version "$VERSION" --git-tag-version=false
+	npm version "${PACKAGE_VERSION}" --git-tag-version=false
 	npm pkg set "repository=${REPOSITORY_URL}"
     else
 	npm pkg set name="@${NAMESPACE}/${PACKAGE_ID}"
-	npm version "$VERSION" --git-tag-version=false
+	npm version "${PACKAGE_VERSION}" --git-tag-version=false
     fi
 
     # publish package
