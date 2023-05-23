@@ -21,14 +21,16 @@ function publish_npm_package() {
     # create new project
     npm init --scope "@${NAMESPACE}" -y
 
-    # set name, version and repository URL if necessary
+    npm pkg set name="@${NAMESPACE}/${PACKAGE_ID}"
+
+    # if $PACKAGE_VERSION is not 1.0.0 (the default value of npm init), then set the version
+    if [ "$PACKAGE_VERSION" != "1.0.0" ]; then
+	npm version "$PACKAGE_VERSION" --git-tag-version false
+    fi
+
+    # set repository URL if necessary
     if [ -n "$REPOSITORY_URL" ]; then
-	npm pkg set name="@${NAMESPACE}/${PACKAGE_ID}"
-	npm version "${PACKAGE_VERSION}" --git-tag-version=false
 	npm pkg set "repository=${REPOSITORY_URL}"
-    else
-	npm pkg set name="@${NAMESPACE}/${PACKAGE_ID}"
-	npm version "${PACKAGE_VERSION}" --git-tag-version=false
     fi
 
     # publish package
