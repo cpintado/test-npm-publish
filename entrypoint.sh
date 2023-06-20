@@ -40,7 +40,7 @@ function publish_npm_package() {
 
 function download_npm_package() {
 
-    npm install "@{NAMESPACE}/${PACKAGE_ID}@$PACKAGE_VERSION"
+    npm install "@${NAMESPACE}/${PACKAGE_ID}@$PACKAGE_VERSION"
 
 }
 
